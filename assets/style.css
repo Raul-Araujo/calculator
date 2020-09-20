@@ -1,0 +1,38 @@
+body{
+    background-color: rgba(0, 0, 0, 0.356);
+    font-family: Arial, Helvetica, sans-serif;
+}
+#output{
+    height: 1em;
+    font-size:1.4em;
+}
+
+.buttons {
+    border: 1px solid rgb(4, 8, 53);;
+    border-radius: 1em;
+    padding: 1.5em;
+    margin: 0 auto;
+    cursor: pointer;
+    background-color: rgb(4, 8, 53);
+    color:ivory;
+}
+#mult{
+    background-color: cornflowerblue;
+}
+#sum{
+    background-color: rgb(71, 112, 189);
+}
+#less{
+    background-color: rgb(41, 76, 139);
+}
+#division{
+    background-color: rgb(9, 37, 88);
+}
+#equalTo{
+    background-color: rgb(2, 25, 66);
+
+}
+td {
+    width: 1.5em;
+    height: auto;
+}
