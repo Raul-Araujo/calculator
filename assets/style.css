@@ -3,26 +3,15 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 #output{
-    height: 1em;
-    font-size:1.4em;
-    padding: 1.4em;
+    font-size:2.5em;
+    padding:0.4em;
+    text-align: right;
 }
 
 main {
     display: flex;
     flex-direction: row;
     justify-content: center;    
-}
-
-.buttons {
-    border: 1px solid rgb(4, 8, 53);
-    background-color: rgb(4, 8, 53);
-    box-shadow: 7px 7px 7px #686868;
-    border-radius: 1em;
-    padding: 1.5em;
-    margin: 0 auto;
-    cursor: pointer;
-    color:ivory;
 }
 
 #mult{
@@ -41,7 +30,16 @@ main {
     background-color: rgb(2, 25, 66);
 
 }
-td {
+td{
     width: 1.5em;
     height: auto;
+    border: 1px solid rgb(4, 8, 53);
+    background-color: rgb(4, 8, 53);
+    box-shadow: 7px 7px 7px #686868;
+    border-radius: 0.7em;
+    padding: 1.5em;
+    margin: 0 auto;
+    cursor: pointer;
+    color:ivory;
+    text-align: center;
 }

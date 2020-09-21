@@ -1,31 +1,25 @@
-
-// the adding function
-function add (...Args) {
-	return Args.reduce(function (previous, next){
-		return previous + next;
-	});
+function getOutput(){
+	return document.getElementById('output').innerText;
+}
+function printOutput(num){
+	document.getElementById('output').innerText=num;
 }
 
-// the sbstraction function
-function subtract (...Args/*It is possible here to add as many arguments as possible*/) {
-	return Args.reduce(function (previous, next){
-		return previous - next;
-	});
+let numbers = document.getElementsByClassName('number');
+for(let i = 0; i<numbers.length; i++){
+	numbers[i].addEventListener('click', function(){
+		alert('Operator:'+this.id);
+	})
 }
-
-// the multiplication function
-function multiply (Args/*This is an array catcher*/) {
-	let mult = 1;
-	for (let key in Args){
-		mult *= Args[key];
-	}
-	return mult;
+let pointing = document.getElementsByClassName('pointing');
+for(let i = 0; i<pointing.length; i++){
+	pointing[i].addEventListener('click', function(){
+		alert('Operator:'+this.id);
+	})
 }
-// the multiplication function
-function multiply (Args/*This is an array catcher*/) {
-	let mult = 1;
-	for (let key in Args){
-		mult /= Args[key];
-	}
-	return mult;
+let operation = document.getElementsByClassName('operators');
+for(let i = 0; i<operation.length; i++){
+	operation[i].addEventListener('click', function(){
+		alert('Operator:'+this.id);
+	})
 }
