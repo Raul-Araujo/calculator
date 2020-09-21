@@ -5,17 +5,25 @@ body{
 #output{
     height: 1em;
     font-size:1.4em;
+    padding: 1.4em;
 }
 
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;    
+}
 .buttons {
-    border: 1px solid rgb(4, 8, 53);;
+    border: 1px solid rgb(4, 8, 53);
+    background-color: rgb(4, 8, 53);
+    box-shadow: 7px 7px 7px gray;
     border-radius: 1em;
     padding: 1.5em;
     margin: 0 auto;
     cursor: pointer;
-    background-color: rgb(4, 8, 53);
     color:ivory;
 }
+
 #mult{
     background-color: cornflowerblue;
 }
@@ -28,7 +36,7 @@ body{
 #division{
     background-color: rgb(9, 37, 88);
 }
-#equalTo{
+#equalTo, #point{
     background-color: rgb(2, 25, 66);
 
 }
