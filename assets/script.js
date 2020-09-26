@@ -1,3 +1,11 @@
+//get the history
+function getHistory(){
+    return document.getElementById('history').innerText;
+}
+function printTheHistory(number){
+    return document.getElementById('history').innerText=number;
+  
+}
 //get the output
 function getOutput(){
     return document.getElementById('output').innerText;
@@ -26,6 +34,7 @@ for (let iterator = 0; iterator < operation.length; iterator++){
     operation[iterator].addEventListener('click', function(){
         if(this.id == 'allClear'){
             printTheOutput("");
+            printTheHistory("");
         } else if(this.id == 'backspace'){
             let output = workableNumber(getOutput()).toString();
             if(output){
@@ -34,8 +43,18 @@ for (let iterator = 0; iterator < operation.length; iterator++){
             }
         } else {
             let output = getOutput();
+            let history = getHistory();
             if(output != ""){
                 output = workableNumber(output);
+                history=history+output;
+                if(this.id == '='){
+                    let result = calculation(getOutput());
+                    printTheOutput(result);
+                } else {
+                    history = history+this.id;
+                    printTheHistory(history);
+                    printTheOutput("");
+                }
             }
         }
     });
@@ -45,7 +64,9 @@ const numbers = document.getElementsByClassName('number');
 for (let i = 0; i<numbers.length; i++){
     numbers[i].addEventListener('click', function(){
         let selected = workableNumber(getOutput());
+        if(selected != NaN){
         selected += this.id;
         printTheOutput(selected);
+        }
     });
 }
