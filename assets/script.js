@@ -1,62 +1,51 @@
+//get the output
 function getOutput(){
-	return document.getElementById('output').innerText;
+    return document.getElementById('output').innerText;
 }
-function printOutput(num){
-	if (num == ''){
-		document.getElementById('output').innerText=num;
+//printing the output
+function printTheOutput(number){
+    if(number == ""){
+        document.getElementById('output').innerText=number;
 
-	} else {
-		document.getElementById('output').innerText=numberFormatted(num);
-
-	}
-}
-
-// formatted number to show 
-function numberFormatted(num){
-	let n = Number(num);
-	let value = n.toLocaleString("en");
-	return value;
+    } else {
+    document.getElementById('output').innerText=formattedNumber(number);
+    }
 }
 
-//workable number to work with
-function workableNumber(num){
-	return Number(num.replace(/,/g,''));
+function formattedNumber(number){
+    let n = Number(number);
+    let value = n.toLocaleString("en");
+    return value;
 }
-//function to get the numbers
-let numbers = document.getElementsByClassName('number');
-for(let i = 0; i<numbers.length; i++){
-	numbers[i].addEventListener('click', function(){
-		let output = workableNumber(getOutput());
-		if(output != NaN){
-			output = output + this.id;
-			printOutput(output);
-		}
-
-	})
+function workableNumber(number){
+    return Number(number.replace(/,/g,''));
 }
-//function to get the point character
-let pointing = document.getElementsByClassName('pointing');
-for(let i = 0; i<pointing.length; i++){
-	pointing[i].addEventListener('click', function(){
-		alert('Pointing:'+this.id);
-	})
+// operator selection
+const operation =  document.getElementsByClassName('operators');
+for (let iterator = 0; iterator < operation.length; iterator++){
+    operation[iterator].addEventListener('click', function(){
+        if(this.id == 'allClear'){
+            printTheOutput("");
+        } else if(this.id == 'backspace'){
+            let output = workableNumber(getOutput()).toString();
+            if(output){
+                output=output.substr(0,output.length-1);
+                printTheOutput(output);
+            }
+        } else {
+            let output = getOutput();
+            if(output != ""){
+                output = workableNumber(output);
+            }
+        }
+    });
 }
-//function to get the operators
-let operation = document.getElementsByClassName('operators');
-for(let i = 0; i<operation.length; i++){
-	operation[i].addEventListener('click', function(){
-		if (this.id == "AC"){
-			printOutput("");
-		} else if (this.id == "clear"){
-			let output = workableNumber(getOutput()).toString();
-			if(output){
-				output = output.substr(0,output.length-1);
-				printOutput(output);
-			}
-		} else {
-			///////////////////////////////////////
-		}
-
-	})
+// numbers selection
+const numbers = document.getElementsByClassName('number');
+for (let i = 0; i<numbers.length; i++){
+    numbers[i].addEventListener('click', function(){
+        let selected = workableNumber(getOutput());
+        selected += this.id;
+        printTheOutput(selected);
+    });
 }
-//function t get the numbers

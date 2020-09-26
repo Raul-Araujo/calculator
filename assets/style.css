@@ -10,7 +10,7 @@ body{
 }
 
 #calculator-frame{
-    border: 3px black solid;
+    border: 1px solid rgb(4, 8, 53);
     border-radius: 0.7em;
 }
 main {
@@ -19,19 +19,12 @@ main {
     justify-content: center;    
 }
 
-#mult{
-    background-color: cornflowerblue;
+#backspace{
+    font-size:1.7em;
+    padding: 0em;
 }
-#sum{
-    background-color: rgb(71, 112, 189);
-}
-#less{
-    background-color: rgb(41, 76, 139);
-}
-#division{
-    background-color: rgb(9, 37, 88);
-}
-#equalTo, #point{
+
+#point{
     background-color: rgb(2, 25, 66);
 
 }
