@@ -48,7 +48,7 @@ for (let iterator = 0; iterator < operation.length; iterator++){
                 output = workableNumber(output);
                 history=history+output;
                 if(this.id == '='){
-                    let result = calculation(getOutput());
+                    let result = calculation(getHistory());
                     printTheOutput(result);
                 } else {
                     history = history+this.id;
