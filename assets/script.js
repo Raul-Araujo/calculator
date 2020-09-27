@@ -22,12 +22,18 @@ function printTheOutput(number){
 
 function formattedNumber(number){
     let n = Number(number);
-    let value = n.toLocaleString("en");
+    let value = n.toLocaleString("br");
     return value;
 }
 function workableNumber(number){
     return Number(number.replace(/,/g,''));
 }
+
+function calculation(number){
+    
+    return Function(`'use strict'; return (${number})`)();
+}
+
 // operator selection
 const operation =  document.getElementsByClassName('operators');
 for (let iterator = 0; iterator < operation.length; iterator++){
@@ -48,7 +54,8 @@ for (let iterator = 0; iterator < operation.length; iterator++){
                 output = workableNumber(output);
                 history=history+output;
                 if(this.id == '='){
-                    let result = calculation(getHistory());
+                    let numbering = getHistory() + getOutput();
+                    let result = calculation(numbering);
                     printTheOutput(result);
                 } else {
                     history = history+this.id;
