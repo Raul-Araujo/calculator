@@ -22,6 +22,7 @@ body {
 .calculator-grid > button {
     cursor: pointer;
     font-size: 2rem;
+    border-radius: 10%;
     color: ivory;
     border: 1px solid ivory;
     outline: none;
@@ -44,6 +45,7 @@ body {
     justify-content: space-around;
     flex-direction: column;
     padding: 10px;
+    border-radius: 4%;
     word-wrap: break-word;
     word-break: break-all;
 }
@@ -51,7 +53,11 @@ body {
     color: rgb(177, 168, 168);
     font-size: 1.5rem;
 }
-
+hr {
+    color: ivory;
+    width: 70%;
+    opacity: 0.4;
+}
 .output .current-operand{
     color: white;
     font-size: 2.5rem;
