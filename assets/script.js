@@ -61,12 +61,12 @@ class Calculator {
         const stringNumber = number.toString();
         const integerDigits = parseFloat(stringNumber.split('.')[0]);
         const decimalDigits = stringNumber.split('.')[1];
-        let integerDislay;
+        let integerDisplay;
 
         if(isNaN(integerDigits)) {
             integerDisplay = '';
         } else {
-            integerDisplay = integerDigits.toLocaleString('pt-BR', {
+            integerDisplay = integerDigits.toLocaleString('en', {
                 maximumFractionDigits: 0
             })
         }
