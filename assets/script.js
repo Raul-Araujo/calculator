@@ -31,6 +31,27 @@ function workableNumber(number){
     return Number(number.replace(/,/g,''));
 }
 
+function compute(computation){
+    const first = workableNumber(getHistory());
+    const second = workableNumber(getOutput());
+    if(isNaN(first) || isNaN(second)) return
+    switch(this.id){
+        case '+':
+            computation = first + second;
+            break;
+        case '-':
+            computation = first - second;
+            break;
+        case '*':
+            computation = first * second;
+            break;
+        case '/':
+            computation = first / second;
+            break;
+        default:
+            return;              
+    }
+}
 let operation = document.getElementsByClassName('operator');
 for(let i = 0; i < operation.length; i++){
     operation[i].addEventListener('click', function(){
@@ -56,7 +77,7 @@ for(let i = 0; i < operation.length; i++){
                 output = output==""?output:workableNumber(output);
                 history = history + output;
                 if(this.id == "="){
-                    let result = eval(history);
+                    let result = compute(history); //create another function to replace for EVAL.
                     printOutput(result);
                     printHistory("");
                 } else {
